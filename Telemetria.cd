@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ClassDiagram Zoom="1" MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Telemetria.My.MyApplication" Collapsed="False">
+    <Position X="0.5" Y="0.5" Width="2.287824" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Telemetria.My.MyComputer" Collapsed="False">
+    <Position X="0.5" Y="2.2" Width="2.356413" />
+    <Compartments />
+  </Class>
+  <Class Name="Telemetria.My.MyForms" Collapsed="False">
+    <Position X="0.5" Y="3.2" Width="1.972433" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Telemetria.My.MyProject" Collapsed="False">
+    <Position X="0.5" Y="4.6" Width="2.44466" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Telemetria.MainForm" Collapsed="False">
+    <Position X="0.5" Y="6.5" Width="3.415578" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+      <Compartment Name="Nested Types" Collapsed="False" />
+    </Compartments>
+  </Class>
+</ClassDiagram>
