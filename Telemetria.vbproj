@@ -81,6 +81,10 @@
       <Project>{C5619CA3-E737-4A3B-AE7B-76E8A6AB4930}</Project>
       <Name>ArtificialHorizon</Name>
     </ProjectReference>
+    <ProjectReference Include="ArtificialHorizon\ArtificialHorizon.vbproj">
+      <Project>{C5619CA3-E737-4A3B-AE7B-76E8A6AB4930}</Project>
+      <Name>ArtificialHorizon</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

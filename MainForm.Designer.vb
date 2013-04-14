@@ -338,7 +338,7 @@ Partial Class MainForm
 		'artificialHorizon1
 		'
 		Me.artificialHorizon1.AutoScroll = true
-		Me.artificialHorizon1.Location = New System.Drawing.Point(41, 123)
+		Me.artificialHorizon1.Location = New System.Drawing.Point(30, 133)
 		Me.artificialHorizon1.Name = "artificialHorizon1"
 		Me.artificialHorizon1.pitch_angle = 0R
 		Me.artificialHorizon1.roll_angle = 0R
@@ -408,4 +408,8 @@ Partial Class MainForm
 	Private toolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
 	Private settingsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Private menuStrip1 As System.Windows.Forms.MenuStrip
+	
+	Sub ArtificialHorizon1Load(sender As Object, e As EventArgs)
+		
+	End Sub
 End Class

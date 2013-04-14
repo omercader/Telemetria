@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 4.3
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Telemetria", "Telemetria.vbproj", "{598D4E53-77F6-4FB6-A35A-45E755254167}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ArtificialHorizon", "ArtificialHorizon\ArtificialHorizon.vbproj", "{C5619CA3-E737-4A3B-AE7B-76E8A6AB4930}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{598D4E53-77F6-4FB6-A35A-45E755254167}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{598D4E53-77F6-4FB6-A35A-45E755254167}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{598D4E53-77F6-4FB6-A35A-45E755254167}.Release|Any CPU.Build.0 = Release|Any CPU
+		{598D4E53-77F6-4FB6-A35A-45E755254167}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5619CA3-E737-4A3B-AE7B-76E8A6AB4930}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5619CA3-E737-4A3B-AE7B-76E8A6AB4930}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5619CA3-E737-4A3B-AE7B-76E8A6AB4930}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5619CA3-E737-4A3B-AE7B-76E8A6AB4930}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+EndGlobal
