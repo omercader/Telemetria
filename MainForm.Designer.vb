@@ -67,6 +67,22 @@ Partial Class MainForm
 		Me.saveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
 		Me.serialPort1 = New System.IO.Ports.SerialPort(Me.components)
 		Me.artificialHorizon1 = New ArtificialHorizon.ArtificialHorizon()
+		Me.groupBox3 = New System.Windows.Forms.GroupBox()
+		Me.sentLabel = New System.Windows.Forms.Label()
+		Me.saveButton = New System.Windows.Forms.Button()
+		Me.sendButton = New System.Windows.Forms.Button()
+		Me.label12 = New System.Windows.Forms.Label()
+		Me.paramBox6 = New System.Windows.Forms.TextBox()
+		Me.label11 = New System.Windows.Forms.Label()
+		Me.paramBox5 = New System.Windows.Forms.TextBox()
+		Me.label10 = New System.Windows.Forms.Label()
+		Me.paramBox4 = New System.Windows.Forms.TextBox()
+		Me.label9 = New System.Windows.Forms.Label()
+		Me.paramBox3 = New System.Windows.Forms.TextBox()
+		Me.label8 = New System.Windows.Forms.Label()
+		Me.paramBox2 = New System.Windows.Forms.TextBox()
+		Me.label7 = New System.Windows.Forms.Label()
+		Me.paramBox1 = New System.Windows.Forms.TextBox()
 		Me.menuStrip1.SuspendLayout
 		Me.groupBox1.SuspendLayout
 		CType(Me.trcSpeedR,System.ComponentModel.ISupportInitialize).BeginInit
@@ -74,6 +90,7 @@ Partial Class MainForm
 		CType(Me.trcMotorR,System.ComponentModel.ISupportInitialize).BeginInit
 		CType(Me.trcMotorL,System.ComponentModel.ISupportInitialize).BeginInit
 		CType(Me.picGraph,System.ComponentModel.ISupportInitialize).BeginInit
+		Me.groupBox3.SuspendLayout
 		Me.SuspendLayout
 		'
 		'menuStrip1
@@ -345,11 +362,161 @@ Partial Class MainForm
 		Me.artificialHorizon1.Size = New System.Drawing.Size(266, 257)
 		Me.artificialHorizon1.TabIndex = 8
 		'
+		'groupBox3
+		'
+		Me.groupBox3.Controls.Add(Me.sentLabel)
+		Me.groupBox3.Controls.Add(Me.saveButton)
+		Me.groupBox3.Controls.Add(Me.sendButton)
+		Me.groupBox3.Controls.Add(Me.label12)
+		Me.groupBox3.Controls.Add(Me.paramBox6)
+		Me.groupBox3.Controls.Add(Me.label11)
+		Me.groupBox3.Controls.Add(Me.paramBox5)
+		Me.groupBox3.Controls.Add(Me.label10)
+		Me.groupBox3.Controls.Add(Me.paramBox4)
+		Me.groupBox3.Controls.Add(Me.label9)
+		Me.groupBox3.Controls.Add(Me.paramBox3)
+		Me.groupBox3.Controls.Add(Me.label8)
+		Me.groupBox3.Controls.Add(Me.paramBox2)
+		Me.groupBox3.Controls.Add(Me.label7)
+		Me.groupBox3.Controls.Add(Me.paramBox1)
+		Me.groupBox3.Location = New System.Drawing.Point(603, 425)
+		Me.groupBox3.Name = "groupBox3"
+		Me.groupBox3.Size = New System.Drawing.Size(193, 255)
+		Me.groupBox3.TabIndex = 23
+		Me.groupBox3.TabStop = false
+		Me.groupBox3.Text = "Parameters"
+		'
+		'sentLabel
+		'
+		Me.sentLabel.ForeColor = System.Drawing.Color.Red
+		Me.sentLabel.Location = New System.Drawing.Point(107, 210)
+		Me.sentLabel.Name = "sentLabel"
+		Me.sentLabel.Size = New System.Drawing.Size(60, 23)
+		Me.sentLabel.TabIndex = 37
+		Me.sentLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		'
+		'saveButton
+		'
+		Me.saveButton.Location = New System.Drawing.Point(26, 210)
+		Me.saveButton.Name = "saveButton"
+		Me.saveButton.Size = New System.Drawing.Size(75, 23)
+		Me.saveButton.TabIndex = 36
+		Me.saveButton.Text = "Save"
+		Me.saveButton.UseVisualStyleBackColor = true
+		AddHandler Me.saveButton.Click, AddressOf Me.BtnSaveClick
+		'
+		'sendButton
+		'
+		Me.sendButton.Location = New System.Drawing.Point(26, 181)
+		Me.sendButton.Name = "sendButton"
+		Me.sendButton.Size = New System.Drawing.Size(75, 23)
+		Me.sendButton.TabIndex = 35
+		Me.sendButton.Text = "Send"
+		Me.sendButton.UseVisualStyleBackColor = true
+		AddHandler Me.sendButton.Click, AddressOf Me.BtnSendClick
+		'
+		'label12
+		'
+		Me.label12.Location = New System.Drawing.Point(132, 152)
+		Me.label12.Name = "label12"
+		Me.label12.Size = New System.Drawing.Size(43, 23)
+		Me.label12.TabIndex = 34
+		Me.label12.Text = "P6"
+		Me.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		'
+		'paramBox6
+		'
+		Me.paramBox6.Location = New System.Drawing.Point(26, 155)
+		Me.paramBox6.Name = "paramBox6"
+		Me.paramBox6.Size = New System.Drawing.Size(100, 20)
+		Me.paramBox6.TabIndex = 33
+		'
+		'label11
+		'
+		Me.label11.Location = New System.Drawing.Point(132, 126)
+		Me.label11.Name = "label11"
+		Me.label11.Size = New System.Drawing.Size(43, 23)
+		Me.label11.TabIndex = 32
+		Me.label11.Text = "P5"
+		Me.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		'
+		'paramBox5
+		'
+		Me.paramBox5.Location = New System.Drawing.Point(26, 129)
+		Me.paramBox5.Name = "paramBox5"
+		Me.paramBox5.Size = New System.Drawing.Size(100, 20)
+		Me.paramBox5.TabIndex = 31
+		'
+		'label10
+		'
+		Me.label10.Location = New System.Drawing.Point(132, 100)
+		Me.label10.Name = "label10"
+		Me.label10.Size = New System.Drawing.Size(43, 23)
+		Me.label10.TabIndex = 30
+		Me.label10.Text = "P4"
+		Me.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		'
+		'paramBox4
+		'
+		Me.paramBox4.Location = New System.Drawing.Point(26, 103)
+		Me.paramBox4.Name = "paramBox4"
+		Me.paramBox4.Size = New System.Drawing.Size(100, 20)
+		Me.paramBox4.TabIndex = 29
+		'
+		'label9
+		'
+		Me.label9.Location = New System.Drawing.Point(132, 74)
+		Me.label9.Name = "label9"
+		Me.label9.Size = New System.Drawing.Size(43, 23)
+		Me.label9.TabIndex = 28
+		Me.label9.Text = "P3"
+		Me.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		'
+		'paramBox3
+		'
+		Me.paramBox3.Location = New System.Drawing.Point(26, 77)
+		Me.paramBox3.Name = "paramBox3"
+		Me.paramBox3.Size = New System.Drawing.Size(100, 20)
+		Me.paramBox3.TabIndex = 27
+		'
+		'label8
+		'
+		Me.label8.Location = New System.Drawing.Point(132, 48)
+		Me.label8.Name = "label8"
+		Me.label8.Size = New System.Drawing.Size(43, 23)
+		Me.label8.TabIndex = 26
+		Me.label8.Text = "P2"
+		Me.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		'
+		'paramBox2
+		'
+		Me.paramBox2.Location = New System.Drawing.Point(26, 51)
+		Me.paramBox2.Name = "paramBox2"
+		Me.paramBox2.Size = New System.Drawing.Size(100, 20)
+		Me.paramBox2.TabIndex = 25
+		'
+		'label7
+		'
+		Me.label7.Location = New System.Drawing.Point(132, 22)
+		Me.label7.Name = "label7"
+		Me.label7.Size = New System.Drawing.Size(43, 23)
+		Me.label7.TabIndex = 24
+		Me.label7.Text = "P1"
+		Me.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		'
+		'paramBox1
+		'
+		Me.paramBox1.Location = New System.Drawing.Point(26, 25)
+		Me.paramBox1.Name = "paramBox1"
+		Me.paramBox1.Size = New System.Drawing.Size(100, 20)
+		Me.paramBox1.TabIndex = 23
+		'
 		'MainForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(818, 692)
+		Me.Controls.Add(Me.groupBox3)
 		Me.Controls.Add(Me.artificialHorizon1)
 		Me.Controls.Add(Me.txtVersion)
 		Me.Controls.Add(Me.btnGraph)
@@ -372,9 +539,27 @@ Partial Class MainForm
 		CType(Me.trcMotorR,System.ComponentModel.ISupportInitialize).EndInit
 		CType(Me.trcMotorL,System.ComponentModel.ISupportInitialize).EndInit
 		CType(Me.picGraph,System.ComponentModel.ISupportInitialize).EndInit
+		Me.groupBox3.ResumeLayout(false)
+		Me.groupBox3.PerformLayout
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
+	Private sentLabel As System.Windows.Forms.Label
+	Private paramBox2 As System.Windows.Forms.TextBox
+	Private label8 As System.Windows.Forms.Label
+	Private paramBox3 As System.Windows.Forms.TextBox
+	Private label9 As System.Windows.Forms.Label
+	Private paramBox4 As System.Windows.Forms.TextBox
+	Private label10 As System.Windows.Forms.Label
+	Private paramBox5 As System.Windows.Forms.TextBox
+	Private label11 As System.Windows.Forms.Label
+	Private paramBox6 As System.Windows.Forms.TextBox
+	Private label12 As System.Windows.Forms.Label
+	Private sendButton As System.Windows.Forms.Button
+	Private saveButton As System.Windows.Forms.Button
+	Private groupBox3 As System.Windows.Forms.GroupBox
+	Private label7 As System.Windows.Forms.Label
+	Private paramBox1 As System.Windows.Forms.TextBox
 	Private artificialHorizon1 As ArtificialHorizon.ArtificialHorizon
 	Private serialPort1 As System.IO.Ports.SerialPort
 	Private saveFileDialog1 As System.Windows.Forms.SaveFileDialog

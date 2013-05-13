@@ -32,6 +32,12 @@ Public Partial Class MainForm
                 dtSpeedL = 9
                 dtSpeedR = 10
                 dtIdendity = 11
+                param1 = 12
+                param2 = 13
+                param3 = 14
+                param4 = 15
+                param5 = 16
+                param6 = 17
         End Enum
         dim strHeader as String = "Time;Gyro;ADXL;Anglerate;Tiltangle;Balancemoment;Totaladxlgyro;MotorL;MotorR;SpeeedL;SpeedR;Idendity;"
         dim logValues(11) as single
@@ -123,6 +129,7 @@ Public Partial Class MainForm
                                         'status = setfader(Me.trcTiltangle, wert,,,Me.lblTiltangleValue)
                                         graphvalue2 = wert * 2
                                         graphvalue2 = graphvalue2 + 50
+                                        Me.artificialHorizon1.pitch_angle = Wert
                                         logValues(Befehl - 1) = Wert
                                 Case eBefehl.dtBalancemoment
                                         'status = setfader(Me.trcBalancemoment, wert,,,Me.lblBalancemomentValue)
@@ -154,6 +161,24 @@ Public Partial Class MainForm
                                 Case eBefehl.dtIdendity
                                         Me.txtVersion.Text = strDatenstring.Substring(Instr(strDatenstring , "=")).Replace(chr(13)," ")
                                         logValues(Befehl - 1) = wert
+                                Case eBefehl.param1
+                                	Me.paramBox1.Text = Wert
+                                	logValues(Befehl - 1) = wert
+                                Case eBefehl.param2
+                                	Me.paramBox2.Text = Wert
+                                	logValues(Befehl - 1) = wert
+                                Case eBefehl.param3
+                                	Me.paramBox3.Text = Wert
+                                	logValues(Befehl - 1) = wert
+                                Case eBefehl.param4
+                                	Me.paramBox4.Text = Wert
+                                	logValues(Befehl - 1) = wert
+                                Case eBefehl.param5
+                                	Me.paramBox5.Text = Wert
+                                	logValues(Befehl - 1) = wert
+                                Case eBefehl.param6
+                                	Me.paramBox6.Text = Wert
+                                	logValues(Befehl - 1) = wert
                                 Case Else
                         End Select
                 End If
@@ -443,6 +468,24 @@ Public Partial Class MainForm
                 strComItem = Me.cboCOM.text
                 me.settingsToolStripMenuItem.DropDown.close
         End Sub
+        
+        private Sub BtnSendClick(sender As Object, e As EventArgs)
+        	
+        	Dim serialString As String
+        	serialString = ":0:17="+Me.paramBox1.Text+":18="+Me.paramBox2.Text+":19="+Me.paramBox3.Text+":20="+Me.paramBox4.Text+":21="+Me.paramBox5.Text+":22="+Me.paramBox6.Text
+       	
+       		serialPort1.Write(serialString)
+       		Me.sentLabel.Text = "Params Sent!"
+        End Sub
+        
+        
+        private Sub BtnSaveClick(sender As Object, e As EventArgs)
+        	
+        	Dim serialString As String
+        	serialString = ":0:17"
+       		serialPort1.Write(serialString)
+       		Me.sentLabel.Text = "Params SAVED!"
+        End Sub
 '---------------------------------------------------------------------------
 'MainFormFormClosing
 'write the settings into the WheelieSettings.ini file
@@ -572,6 +615,10 @@ Public Partial Class MainForm
 	End Sub
 	
 	Sub Label3Click(sender As Object, e As EventArgs)
+		
+	End Sub
+	
+	Sub Label7Click(sender As Object, e As EventArgs)
 		
 	End Sub
 End Class
