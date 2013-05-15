@@ -479,6 +479,14 @@ Public Partial Class MainForm
         End Sub
         
         
+         private Sub BtnGetClick(sender As Object, e As EventArgs)
+        	
+        	Dim serialString As String
+        	serialString = ":0:25"
+       	    serialPort1.Write(serialString)
+       		
+        End Sub
+        
         private Sub BtnSaveClick(sender As Object, e As EventArgs)
         	
         	Dim serialString As String

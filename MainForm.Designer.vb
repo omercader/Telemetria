@@ -83,6 +83,7 @@ Partial Class MainForm
 		Me.paramBox2 = New System.Windows.Forms.TextBox()
 		Me.label7 = New System.Windows.Forms.Label()
 		Me.paramBox1 = New System.Windows.Forms.TextBox()
+		Me.button1 = New System.Windows.Forms.Button()
 		Me.menuStrip1.SuspendLayout
 		Me.groupBox1.SuspendLayout
 		CType(Me.trcSpeedR,System.ComponentModel.ISupportInitialize).BeginInit
@@ -511,11 +512,22 @@ Partial Class MainForm
 		Me.paramBox1.Size = New System.Drawing.Size(100, 20)
 		Me.paramBox1.TabIndex = 23
 		'
+		'button1
+		'
+		Me.button1.Location = New System.Drawing.Point(158, 65)
+		Me.button1.Name = "button1"
+		Me.button1.Size = New System.Drawing.Size(75, 23)
+		Me.button1.TabIndex = 24
+		Me.button1.Text = "Get Params"
+		Me.button1.UseVisualStyleBackColor = true
+		AddHandler Me.button1.Click, AddressOf Me.BtnGetClick
+		'
 		'MainForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(818, 692)
+		Me.Controls.Add(Me.button1)
 		Me.Controls.Add(Me.groupBox3)
 		Me.Controls.Add(Me.artificialHorizon1)
 		Me.Controls.Add(Me.txtVersion)
@@ -544,6 +556,7 @@ Partial Class MainForm
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
+	Private button1 As System.Windows.Forms.Button
 	Private sentLabel As System.Windows.Forms.Label
 	Private paramBox2 As System.Windows.Forms.TextBox
 	Private label8 As System.Windows.Forms.Label
