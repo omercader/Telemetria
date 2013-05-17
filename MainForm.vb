@@ -163,22 +163,22 @@ Public Partial Class MainForm
                                         logValues(Befehl - 1) = wert
                                 Case eBefehl.param1
                                 	Me.paramBox1.Text = Wert
-                                	logValues(Befehl - 1) = wert
+                                	'logValues(Befehl - 1) = wert
                                 Case eBefehl.param2
                                 	Me.paramBox2.Text = Wert
-                                	logValues(Befehl - 1) = wert
+                                	'logValues(Befehl - 1) = wert
                                 Case eBefehl.param3
                                 	Me.paramBox3.Text = Wert
-                                	logValues(Befehl - 1) = wert
+                                	'logValues(Befehl - 1) = wert
                                 Case eBefehl.param4
                                 	Me.paramBox4.Text = Wert
-                                	logValues(Befehl - 1) = wert
+                                	'logValues(Befehl - 1) = wert
                                 Case eBefehl.param5
                                 	Me.paramBox5.Text = Wert
-                                	logValues(Befehl - 1) = wert
+                                	'logValues(Befehl - 1) = wert
                                 Case eBefehl.param6
                                 	Me.paramBox6.Text = Wert
-                                	logValues(Befehl - 1) = wert
+                                	'logValues(Befehl - 1) = wert
                                 Case Else
                         End Select
                 End If
@@ -472,9 +472,28 @@ Public Partial Class MainForm
         private Sub BtnSendClick(sender As Object, e As EventArgs)
         	
         	Dim serialString As String
-        	serialString = ":0:17="+Me.paramBox1.Text+":18="+Me.paramBox2.Text+":19="+Me.paramBox3.Text+":20="+Me.paramBox4.Text+":21="+Me.paramBox5.Text+":22="+Me.paramBox6.Text
+        	
+        	If sender.Name.Equals("sendButton1") Then
+        		serialString = ":0:17="+Me.paramBox1.Text
+        	End If
+        	If sender.Name.Equals("sendButton2") Then
+        		serialString = ":0:18="+Me.paramBox2.Text
+        	End If
+        	If sender.Name.Equals("sendButton3") Then
+        		serialString = ":0:19="+Me.paramBox3.Text
+        	End If
+        	If sender.Name.Equals("sendButton4") Then
+        		serialString = ":0:20="+Me.paramBox4.Text
+        	End If
+        	If sender.Name.Equals("sendButton5") Then
+        		serialString = ":0:21="+Me.paramBox5.Text
+        	End If
+        	If sender.Name.Equals("sendButton6") Then
+        		serialString = ":0:22="+Me.paramBox6.Text
+        	End If
+        	'serialString = +":18="+Me.paramBox2.Text+":19="+Me.paramBox3.Text+":20="+Me.paramBox4.Text+":21="+Me.paramBox5.Text+":22="+Me.paramBox6.Text+"\r"
        	
-       		serialPort1.Write(serialString)
+       		serialPort1.WriteLine(serialString & vbCr)
        		Me.sentLabel.Text = "Params Sent!"
         End Sub
         
@@ -482,16 +501,17 @@ Public Partial Class MainForm
          private Sub BtnGetClick(sender As Object, e As EventArgs)
         	
         	Dim serialString As String
+        	
         	serialString = ":0:25"
-       	    serialPort1.Write(serialString)
+       	    serialPort1.WriteLine(serialString & vbCr)
        		
         End Sub
         
         private Sub BtnSaveClick(sender As Object, e As EventArgs)
         	
         	Dim serialString As String
-        	serialString = ":0:17"
-       		serialPort1.Write(serialString)
+        	serialString = ":0:16"
+       		serialPort1.WriteLine(serialString & vbCr)
        		Me.sentLabel.Text = "Params SAVED!"
         End Sub
 '---------------------------------------------------------------------------
@@ -627,6 +647,10 @@ Public Partial Class MainForm
 	End Sub
 	
 	Sub Label7Click(sender As Object, e As EventArgs)
+		
+	End Sub
+	
+	Sub Button1Click(sender As Object, e As EventArgs)
 		
 	End Sub
 End Class

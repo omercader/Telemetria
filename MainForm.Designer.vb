@@ -68,9 +68,14 @@ Partial Class MainForm
 		Me.serialPort1 = New System.IO.Ports.SerialPort(Me.components)
 		Me.artificialHorizon1 = New ArtificialHorizon.ArtificialHorizon()
 		Me.groupBox3 = New System.Windows.Forms.GroupBox()
+		Me.sendButton6 = New System.Windows.Forms.Button()
+		Me.sendButton5 = New System.Windows.Forms.Button()
+		Me.sendButton4 = New System.Windows.Forms.Button()
+		Me.sendButton3 = New System.Windows.Forms.Button()
+		Me.sendButton2 = New System.Windows.Forms.Button()
 		Me.sentLabel = New System.Windows.Forms.Label()
 		Me.saveButton = New System.Windows.Forms.Button()
-		Me.sendButton = New System.Windows.Forms.Button()
+		Me.sendButton1 = New System.Windows.Forms.Button()
 		Me.label12 = New System.Windows.Forms.Label()
 		Me.paramBox6 = New System.Windows.Forms.TextBox()
 		Me.label11 = New System.Windows.Forms.Label()
@@ -99,7 +104,7 @@ Partial Class MainForm
 		Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.settingsToolStripMenuItem})
 		Me.menuStrip1.Location = New System.Drawing.Point(0, 0)
 		Me.menuStrip1.Name = "menuStrip1"
-		Me.menuStrip1.Size = New System.Drawing.Size(818, 24)
+		Me.menuStrip1.Size = New System.Drawing.Size(839, 24)
 		Me.menuStrip1.TabIndex = 0
 		Me.menuStrip1.Text = "menuStrip1"
 		'
@@ -128,10 +133,11 @@ Partial Class MainForm
 		'
 		'tsLogfile
 		'
+		Me.tsLogfile.CheckOnClick = true
 		Me.tsLogfile.Name = "tsLogfile"
 		Me.tsLogfile.Size = New System.Drawing.Size(181, 22)
 		Me.tsLogfile.Text = "write LogFile"
-		AddHandler Me.tsLogfile.Click, AddressOf Me.CboComSelectedIndexChanged
+		AddHandler Me.tsLogfile.Click, AddressOf Me.TsLogfileClick
 		'
 		'toolStripSeparator2
 		'
@@ -317,7 +323,7 @@ Partial Class MainForm
 		'
 		Me.groupBox2.Location = New System.Drawing.Point(596, 27)
 		Me.groupBox2.Name = "groupBox2"
-		Me.groupBox2.Size = New System.Drawing.Size(200, 344)
+		Me.groupBox2.Size = New System.Drawing.Size(231, 344)
 		Me.groupBox2.TabIndex = 4
 		Me.groupBox2.TabStop = false
 		Me.groupBox2.Text = "Battery"
@@ -365,9 +371,14 @@ Partial Class MainForm
 		'
 		'groupBox3
 		'
+		Me.groupBox3.Controls.Add(Me.sendButton6)
+		Me.groupBox3.Controls.Add(Me.sendButton5)
+		Me.groupBox3.Controls.Add(Me.sendButton4)
+		Me.groupBox3.Controls.Add(Me.sendButton3)
+		Me.groupBox3.Controls.Add(Me.sendButton2)
 		Me.groupBox3.Controls.Add(Me.sentLabel)
 		Me.groupBox3.Controls.Add(Me.saveButton)
-		Me.groupBox3.Controls.Add(Me.sendButton)
+		Me.groupBox3.Controls.Add(Me.sendButton1)
 		Me.groupBox3.Controls.Add(Me.label12)
 		Me.groupBox3.Controls.Add(Me.paramBox6)
 		Me.groupBox3.Controls.Add(Me.label11)
@@ -382,10 +393,60 @@ Partial Class MainForm
 		Me.groupBox3.Controls.Add(Me.paramBox1)
 		Me.groupBox3.Location = New System.Drawing.Point(603, 425)
 		Me.groupBox3.Name = "groupBox3"
-		Me.groupBox3.Size = New System.Drawing.Size(193, 255)
+		Me.groupBox3.Size = New System.Drawing.Size(224, 255)
 		Me.groupBox3.TabIndex = 23
 		Me.groupBox3.TabStop = false
 		Me.groupBox3.Text = "Parameters"
+		'
+		'sendButton6
+		'
+		Me.sendButton6.Location = New System.Drawing.Point(172, 152)
+		Me.sendButton6.Name = "sendButton6"
+		Me.sendButton6.Size = New System.Drawing.Size(46, 23)
+		Me.sendButton6.TabIndex = 42
+		Me.sendButton6.Text = "Send"
+		Me.sendButton6.UseVisualStyleBackColor = true
+		AddHandler Me.sendButton6.Click, AddressOf Me.BtnSendClick
+		'
+		'sendButton5
+		'
+		Me.sendButton5.Location = New System.Drawing.Point(172, 126)
+		Me.sendButton5.Name = "sendButton5"
+		Me.sendButton5.Size = New System.Drawing.Size(46, 23)
+		Me.sendButton5.TabIndex = 41
+		Me.sendButton5.Text = "Send"
+		Me.sendButton5.UseVisualStyleBackColor = true
+		AddHandler Me.sendButton5.Click, AddressOf Me.BtnSendClick
+		'
+		'sendButton4
+		'
+		Me.sendButton4.Location = New System.Drawing.Point(172, 101)
+		Me.sendButton4.Name = "sendButton4"
+		Me.sendButton4.Size = New System.Drawing.Size(46, 23)
+		Me.sendButton4.TabIndex = 40
+		Me.sendButton4.Text = "Send"
+		Me.sendButton4.UseVisualStyleBackColor = true
+		AddHandler Me.sendButton4.Click, AddressOf Me.BtnSendClick
+		'
+		'sendButton3
+		'
+		Me.sendButton3.Location = New System.Drawing.Point(172, 75)
+		Me.sendButton3.Name = "sendButton3"
+		Me.sendButton3.Size = New System.Drawing.Size(46, 23)
+		Me.sendButton3.TabIndex = 39
+		Me.sendButton3.Text = "Send"
+		Me.sendButton3.UseVisualStyleBackColor = true
+		AddHandler Me.sendButton3.Click, AddressOf Me.BtnSendClick
+		'
+		'sendButton2
+		'
+		Me.sendButton2.Location = New System.Drawing.Point(172, 49)
+		Me.sendButton2.Name = "sendButton2"
+		Me.sendButton2.Size = New System.Drawing.Size(46, 23)
+		Me.sendButton2.TabIndex = 38
+		Me.sendButton2.Text = "Send"
+		Me.sendButton2.UseVisualStyleBackColor = true
+		AddHandler Me.sendButton2.Click, AddressOf Me.BtnSendClick
 		'
 		'sentLabel
 		'
@@ -406,15 +467,15 @@ Partial Class MainForm
 		Me.saveButton.UseVisualStyleBackColor = true
 		AddHandler Me.saveButton.Click, AddressOf Me.BtnSaveClick
 		'
-		'sendButton
+		'sendButton1
 		'
-		Me.sendButton.Location = New System.Drawing.Point(26, 181)
-		Me.sendButton.Name = "sendButton"
-		Me.sendButton.Size = New System.Drawing.Size(75, 23)
-		Me.sendButton.TabIndex = 35
-		Me.sendButton.Text = "Send"
-		Me.sendButton.UseVisualStyleBackColor = true
-		AddHandler Me.sendButton.Click, AddressOf Me.BtnSendClick
+		Me.sendButton1.Location = New System.Drawing.Point(172, 23)
+		Me.sendButton1.Name = "sendButton1"
+		Me.sendButton1.Size = New System.Drawing.Size(46, 23)
+		Me.sendButton1.TabIndex = 35
+		Me.sendButton1.Text = "Send"
+		Me.sendButton1.UseVisualStyleBackColor = true
+		AddHandler Me.sendButton1.Click, AddressOf Me.BtnSendClick
 		'
 		'label12
 		'
@@ -427,7 +488,7 @@ Partial Class MainForm
 		'
 		'paramBox6
 		'
-		Me.paramBox6.Location = New System.Drawing.Point(26, 155)
+		Me.paramBox6.Location = New System.Drawing.Point(26, 154)
 		Me.paramBox6.Name = "paramBox6"
 		Me.paramBox6.Size = New System.Drawing.Size(100, 20)
 		Me.paramBox6.TabIndex = 33
@@ -443,7 +504,7 @@ Partial Class MainForm
 		'
 		'paramBox5
 		'
-		Me.paramBox5.Location = New System.Drawing.Point(26, 129)
+		Me.paramBox5.Location = New System.Drawing.Point(26, 128)
 		Me.paramBox5.Name = "paramBox5"
 		Me.paramBox5.Size = New System.Drawing.Size(100, 20)
 		Me.paramBox5.TabIndex = 31
@@ -459,7 +520,7 @@ Partial Class MainForm
 		'
 		'paramBox4
 		'
-		Me.paramBox4.Location = New System.Drawing.Point(26, 103)
+		Me.paramBox4.Location = New System.Drawing.Point(26, 102)
 		Me.paramBox4.Name = "paramBox4"
 		Me.paramBox4.Size = New System.Drawing.Size(100, 20)
 		Me.paramBox4.TabIndex = 29
@@ -475,7 +536,7 @@ Partial Class MainForm
 		'
 		'paramBox3
 		'
-		Me.paramBox3.Location = New System.Drawing.Point(26, 77)
+		Me.paramBox3.Location = New System.Drawing.Point(26, 76)
 		Me.paramBox3.Name = "paramBox3"
 		Me.paramBox3.Size = New System.Drawing.Size(100, 20)
 		Me.paramBox3.TabIndex = 27
@@ -491,7 +552,7 @@ Partial Class MainForm
 		'
 		'paramBox2
 		'
-		Me.paramBox2.Location = New System.Drawing.Point(26, 51)
+		Me.paramBox2.Location = New System.Drawing.Point(26, 50)
 		Me.paramBox2.Name = "paramBox2"
 		Me.paramBox2.Size = New System.Drawing.Size(100, 20)
 		Me.paramBox2.TabIndex = 25
@@ -507,14 +568,14 @@ Partial Class MainForm
 		'
 		'paramBox1
 		'
-		Me.paramBox1.Location = New System.Drawing.Point(26, 25)
+		Me.paramBox1.Location = New System.Drawing.Point(26, 24)
 		Me.paramBox1.Name = "paramBox1"
 		Me.paramBox1.Size = New System.Drawing.Size(100, 20)
 		Me.paramBox1.TabIndex = 23
 		'
 		'button1
 		'
-		Me.button1.Location = New System.Drawing.Point(158, 65)
+		Me.button1.Location = New System.Drawing.Point(160, 65)
 		Me.button1.Name = "button1"
 		Me.button1.Size = New System.Drawing.Size(75, 23)
 		Me.button1.TabIndex = 24
@@ -526,7 +587,7 @@ Partial Class MainForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.ClientSize = New System.Drawing.Size(818, 692)
+		Me.ClientSize = New System.Drawing.Size(839, 692)
 		Me.Controls.Add(Me.button1)
 		Me.Controls.Add(Me.groupBox3)
 		Me.Controls.Add(Me.artificialHorizon1)
@@ -557,6 +618,11 @@ Partial Class MainForm
 		Me.PerformLayout
 	End Sub
 	Private button1 As System.Windows.Forms.Button
+	Private sendButton2 As System.Windows.Forms.Button
+	Private sendButton3 As System.Windows.Forms.Button
+	Private sendButton4 As System.Windows.Forms.Button
+	Private sendButton5 As System.Windows.Forms.Button
+	Private sendButton6 As System.Windows.Forms.Button
 	Private sentLabel As System.Windows.Forms.Label
 	Private paramBox2 As System.Windows.Forms.TextBox
 	Private label8 As System.Windows.Forms.Label
@@ -568,7 +634,7 @@ Partial Class MainForm
 	Private label11 As System.Windows.Forms.Label
 	Private paramBox6 As System.Windows.Forms.TextBox
 	Private label12 As System.Windows.Forms.Label
-	Private sendButton As System.Windows.Forms.Button
+	Private sendButton1 As System.Windows.Forms.Button
 	Private saveButton As System.Windows.Forms.Button
 	Private groupBox3 As System.Windows.Forms.GroupBox
 	Private label7 As System.Windows.Forms.Label
